@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Layouts,
-  FMX.Controls.Presentation, FMX.StdCtrls;
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Edit;
 
 type
   TForm1 = class(TForm)
@@ -25,6 +25,16 @@ type
     btn_subtrair: TButton;
     btn_mult: TButton;
     btn_dividir: TButton;
+    caixa_botoes: TLayout;
+    caixa_topo: TLayout;
+    txt_num1: TEdit;
+    lb_operador: TLabel;
+    txt_num2: TEdit;
+    procedure btn_subtrairClick(Sender: TObject);
+    procedure btn_somarClick(Sender: TObject);
+    procedure btn_multClick(Sender: TObject);
+    procedure btn_dividirClick(Sender: TObject);
+    procedure btn_igualClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,5 +47,32 @@ var
 implementation
 
 {$R *.fmx}
+
+procedure TForm1.btn_dividirClick(Sender: TObject);
+begin
+  lb_operador.Text := '/';
+end;
+
+procedure TForm1.btn_igualClick(Sender: TObject);
+  var n1, n2 : double;
+begin
+  n1 := strToFloat(txt_num1.Text);
+  n2 := strToFloat(txt_num2.Text);
+end;
+
+procedure TForm1.btn_multClick(Sender: TObject);
+begin
+  lb_operador.Text := 'x';
+end;
+
+procedure TForm1.btn_somarClick(Sender: TObject);
+begin
+  lb_operador.Text := '+';
+end;
+
+procedure TForm1.btn_subtrairClick(Sender: TObject);
+begin
+  lb_operador.Text := '-';
+end;
 
 end.
