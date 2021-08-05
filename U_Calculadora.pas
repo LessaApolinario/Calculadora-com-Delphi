@@ -51,6 +51,10 @@ implementation
 procedure TForm1.btn_dividirClick(Sender: TObject);
 begin
   lb_operador.Text := '/';
+  btn_somar.Enabled := true;
+  btn_dividir.Enabled := false;
+  btn_mult.Enabled := true;
+  btn_subtrair.Enabled := true;
 end;
 
 procedure TForm1.btn_igualClick(Sender: TObject);
@@ -63,16 +67,28 @@ end;
 procedure TForm1.btn_multClick(Sender: TObject);
 begin
   lb_operador.Text := 'x';
+  btn_somar.Enabled := true;
+  btn_dividir.Enabled := true;
+  btn_mult.enabled := false;
+  btn_subtrair.enabled := true;
 end;
 
 procedure TForm1.btn_somarClick(Sender: TObject);
 begin
   lb_operador.Text := '+';
+  btn_somar.Enabled := false;
+  btn_dividir.Enabled := true;
+  btn_mult.Enabled := true;
+  btn_subtrair.Enabled := true;
 end;
 
 procedure TForm1.btn_subtrairClick(Sender: TObject);
 begin
   lb_operador.Text := '-';
+  btn_somar.Enabled := true;
+  btn_dividir.Enabled := true;
+  btn_mult.Enabled := true;
+  btn_subtrair.Enabled := false;
 end;
 
 end.
