@@ -144,6 +144,7 @@ object Form1: TForm1
       Size.PlatformDefault = False
       TabOrder = 13
       Text = '.'
+      OnClick = btn_pontoClick
     end
     object btn_somar: TButton
       Position.X = 368.000000000000000000
@@ -219,7 +220,7 @@ object Form1: TForm1
     end
     object btn_apagar: TButton
       Position.X = 432.000000000000000000
-      Position.Y = 176.000000000000000000
+      Position.Y = 232.000000000000000000
       Size.Width = 48.000000000000000000
       Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
@@ -227,6 +228,26 @@ object Form1: TForm1
       TabOrder = 12
       Text = '.'
       OnClick = btn_apagarClick
+    end
+    object btn_ce: TButton
+      Position.X = 432.000000000000000000
+      Position.Y = 288.000000000000000000
+      Size.Width = 49.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 19
+      Text = 'CE'
+      OnClick = btn_ceClick
+    end
+    object btn_C: TButton
+      Position.X = 432.000000000000000000
+      Position.Y = 336.000000000000000000
+      Size.Width = 49.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 18
+      Text = 'C'
+      OnClick = btn_CClick
     end
   end
 end

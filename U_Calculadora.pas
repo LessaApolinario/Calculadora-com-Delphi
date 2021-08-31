@@ -31,6 +31,8 @@ type
     lb_num2: TLabel;
     btn_7: TButton;
     btn_apagar: TButton;
+    btn_ce: TButton;
+    btn_C: TButton;
     procedure btn_subtrairClick(Sender: TObject);
     procedure btn_somarClick(Sender: TObject);
     procedure btn_multClick(Sender: TObject);
@@ -47,6 +49,9 @@ type
     procedure btn_9Click(Sender: TObject);
     procedure btn_0Click(Sender: TObject);
     procedure btn_apagarClick(Sender: TObject);
+    procedure btn_pontoClick(Sender: TObject);
+    procedure btn_ceClick(Sender: TObject);
+    procedure btn_CClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -192,6 +197,31 @@ begin
   end;
 end;
 
+procedure TForm1.btn_CClick(Sender: TObject);
+begin
+  if (lb_operador.Text = '.') then
+  begin
+    lb_num1.Text := '';
+  end
+  else
+  begin
+    lb_num2.Text := '';
+  end;
+
+end;
+
+procedure TForm1.btn_ceClick(Sender: TObject);
+begin
+  lb_num1.Text := '';
+  lb_operador.Text := '.';
+  lb_num2.Text := '';
+
+  btn_somar.Enabled := true;
+  btn_dividir.Enabled := true;
+  btn_mult.enabled := true;
+  btn_subtrair.enabled := true;
+end;
+
 procedure TForm1.btn_dividirClick(Sender: TObject);
 begin
   lb_operador.Text := '/';
@@ -259,6 +289,11 @@ begin
   lb_num1.Text := '';
   lb_operador.Text := '.';
   lb_num2.Text := '';
+
+  btn_somar.Enabled := true;
+  btn_dividir.Enabled := true;
+  btn_mult.enabled := true;
+  btn_subtrair.enabled := true;
 end;
 
 procedure TForm1.btn_multClick(Sender: TObject);
@@ -268,6 +303,18 @@ begin
   btn_dividir.Enabled := true;
   btn_mult.enabled := false;
   btn_subtrair.enabled := true;
+end;
+
+procedure TForm1.btn_pontoClick(Sender: TObject);
+begin
+  if (lb_operador.Text = '.') then
+  begin
+    lb_num1.Text := lb_num1.Text + ',';
+  end
+  else
+  begin
+    lb_num2.Text := lb_num2.Text + ',';
+  end;
 end;
 
 procedure TForm1.btn_somarClick(Sender: TObject);
