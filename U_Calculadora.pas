@@ -9,27 +9,28 @@ uses
 
 type
   TForm1 = class(TForm)
+    caixa_botoes: TLayout;
     btn_0: TButton;
     btn_1: TButton;
     btn_2: TButton;
     btn_3: TButton;
-    btn_6: TButton;
-    btn_5: TButton;
     btn_4: TButton;
+    btn_5: TButton;
+    btn_6: TButton;
     btn_8: TButton;
     btn_9: TButton;
+    btn_dividir: TButton;
     btn_igual: TButton;
+    btn_mult: TButton;
     btn_ponto: TButton;
     btn_somar: TButton;
     btn_subtrair: TButton;
-    btn_mult: TButton;
-    btn_dividir: TButton;
-    caixa_botoes: TLayout;
     caixa_topo: TLayout;
     lb_operador: TLabel;
-    btn_7: TButton;
     lb_num1: TLabel;
     lb_num2: TLabel;
+    btn_7: TButton;
+    btn_apagar: TButton;
     procedure btn_subtrairClick(Sender: TObject);
     procedure btn_somarClick(Sender: TObject);
     procedure btn_multClick(Sender: TObject);
@@ -45,6 +46,7 @@ type
     procedure btn_8Click(Sender: TObject);
     procedure btn_9Click(Sender: TObject);
     procedure btn_0Click(Sender: TObject);
+    procedure btn_apagarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -178,6 +180,18 @@ begin
   end;
 end;
 
+procedure TForm1.btn_apagarClick(Sender: TObject);
+begin
+  if (lb_operador.Text = '.') then
+  begin
+    lb_num1.Text := copy(lb_num1.Text, 0, length(lb_num1.Text) - 1);
+  end
+  else
+  begin
+    lb_num2.Text := copy(lb_num2.Text, 0, length(lb_num2.Text) - 1);
+  end;
+end;
+
 procedure TForm1.btn_dividirClick(Sender: TObject);
 begin
   lb_operador.Text := '/';
@@ -241,6 +255,10 @@ begin
       ShowMessage(FloatToStr(n1 / n2));
     end;
   end;
+
+  lb_num1.Text := '';
+  lb_operador.Text := '.';
+  lb_num2.Text := '';
 end;
 
 procedure TForm1.btn_multClick(Sender: TObject);

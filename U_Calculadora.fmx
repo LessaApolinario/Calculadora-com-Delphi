@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 0
   Caption = 'Calculadora'
   ClientHeight = 320
-  ClientWidth = 288
+  ClientWidth = 386
   Position = DesktopCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
@@ -12,7 +12,7 @@ object Form1: TForm1
   object caixa_botoes: TLayout
     Position.X = -152.000000000000000000
     Position.Y = -72.000000000000000000
-    Size.Width = 433.000000000000000000
+    Size.Width = 529.000000000000000000
     Size.Height = 400.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
@@ -142,7 +142,7 @@ object Form1: TForm1
       Size.Width = 50.000000000000000000
       Size.Height = 40.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 12
+      TabOrder = 13
       Text = '.'
     end
     object btn_somar: TButton
@@ -151,7 +151,7 @@ object Form1: TForm1
       Size.Width = 50.000000000000000000
       Size.Height = 40.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 13
+      TabOrder = 14
       Text = '+'
       OnClick = btn_somarClick
     end
@@ -161,7 +161,7 @@ object Form1: TForm1
       Size.Width = 50.000000000000000000
       Size.Height = 40.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 14
+      TabOrder = 15
       Text = '-'
       OnClick = btn_subtrairClick
     end
@@ -171,7 +171,7 @@ object Form1: TForm1
       Size.Width = 241.000000000000000000
       Size.Height = 73.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 16
+      TabOrder = 17
       object lb_operador: TLabel
         StyledSettings = [Family, Style, FontColor]
         Position.X = 96.000000000000000000
@@ -193,7 +193,6 @@ object Form1: TForm1
         Size.PlatformDefault = False
         TextSettings.Font.Size = 16.000000000000000000
         TextSettings.HorzAlign = Center
-        Text = '0'
         TabOrder = 2
       end
       object lb_num2: TLabel
@@ -205,7 +204,6 @@ object Form1: TForm1
         Size.PlatformDefault = False
         TextSettings.Font.Size = 16.000000000000000000
         TextSettings.HorzAlign = Center
-        Text = '0'
         TabOrder = 1
       end
     end
@@ -215,9 +213,20 @@ object Form1: TForm1
       Size.Width = 50.000000000000000000
       Size.Height = 40.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 15
+      TabOrder = 16
       Text = '7'
       OnClick = btn_7Click
+    end
+    object btn_apagar: TButton
+      Position.X = 432.000000000000000000
+      Position.Y = 176.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'priortoolbutton'
+      TabOrder = 12
+      Text = '.'
+      OnClick = btn_apagarClick
     end
   end
 end
