@@ -67,3 +67,10 @@ __recovery/
 
 # Boss dependency manager vendor folder https://github.com/HashLoad/boss
 modules/
+
+# ícones
+Calculadora_Icns.icns
+Calculadora_Icns1.icns
+Calculadora_Icns2.icns
+Calculadora_Icon.ico
+Calculadora_Icon1.ico
