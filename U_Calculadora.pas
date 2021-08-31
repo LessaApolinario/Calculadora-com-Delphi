@@ -17,7 +17,6 @@ type
     btn_5: TButton;
     btn_4: TButton;
     btn_8: TButton;
-    tbn_7: TButton;
     btn_9: TButton;
     btn_igual: TButton;
     btn_ponto: TButton;
@@ -27,14 +26,25 @@ type
     btn_dividir: TButton;
     caixa_botoes: TLayout;
     caixa_topo: TLayout;
-    txt_num1: TEdit;
     lb_operador: TLabel;
-    txt_num2: TEdit;
+    btn_7: TButton;
+    lb_num1: TLabel;
+    lb_num2: TLabel;
     procedure btn_subtrairClick(Sender: TObject);
     procedure btn_somarClick(Sender: TObject);
     procedure btn_multClick(Sender: TObject);
     procedure btn_dividirClick(Sender: TObject);
     procedure btn_igualClick(Sender: TObject);
+    procedure btn_1Click(Sender: TObject);
+    procedure btn_2Click(Sender: TObject);
+    procedure btn_3Click(Sender: TObject);
+    procedure btn_4Click(Sender: TObject);
+    procedure btn_5Click(Sender: TObject);
+    procedure btn_6Click(Sender: TObject);
+    procedure btn_7Click(Sender: TObject);
+    procedure btn_8Click(Sender: TObject);
+    procedure btn_9Click(Sender: TObject);
+    procedure btn_0Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -48,6 +58,126 @@ implementation
 
 {$R *.fmx}
 
+procedure TForm1.btn_0Click(Sender: TObject);
+begin
+  if (lb_operador.Text = '.') then
+  begin
+    lb_num1.Text := lb_num1.Text + '0';
+  end
+  else
+  begin
+    lb_num2.Text := lb_num2.Text + '0';
+  end;
+end;
+
+procedure TForm1.btn_1Click(Sender: TObject);
+begin
+  if (lb_operador.Text = '.') then
+  begin
+    lb_num1.Text := lb_num1.Text + '1';
+  end
+  else
+  begin
+    lb_num2.Text := lb_num2.Text + '1';
+  end;
+end;
+
+procedure TForm1.btn_2Click(Sender: TObject);
+begin
+  if (lb_operador.Text = '.') then
+  begin
+    lb_num1.Text := lb_num1.Text + '2';
+  end
+  else
+  begin
+    lb_num2.Text := lb_num2.Text + '2';
+  end;
+end;
+
+procedure TForm1.btn_3Click(Sender: TObject);
+begin
+  if (lb_operador.Text = '.') then
+  begin
+    lb_num1.Text := lb_num1.Text + '3';
+  end
+  else
+  begin
+    lb_num2.Text := lb_num2.Text + '3';
+  end;
+end;
+
+procedure TForm1.btn_4Click(Sender: TObject);
+begin
+   if (lb_operador.Text = '.') then
+  begin
+    lb_num1.Text := lb_num1.Text + '4';
+  end
+  else
+  begin
+    lb_num2.Text := lb_num2.Text + '4';
+  end;
+end;
+
+procedure TForm1.btn_5Click(Sender: TObject);
+begin
+  if (lb_operador.Text = '.') then
+  begin
+    lb_num1.Text := lb_num1.Text + '5';
+  end
+  else
+  begin
+    lb_num2.Text := lb_num2.Text + '5';
+  end;
+end;
+
+procedure TForm1.btn_6Click(Sender: TObject);
+begin
+  if (lb_operador.Text = '.') then
+  begin
+    lb_num1.Text := lb_num1.Text + '6';
+  end
+  else
+  begin
+    lb_num2.Text := lb_num2.Text + '6';
+  end;
+end;
+
+procedure TForm1.btn_7Click(Sender: TObject);
+begin
+  if (lb_operador.Text = '.') then
+  begin
+    lb_num1.Text := lb_num1.Text + '7';
+  end
+  else
+  begin
+    lb_num2.Text := lb_num2.Text + '7';
+  end;
+end;
+
+procedure TForm1.btn_8Click(Sender: TObject);
+begin
+  if (lb_operador.Text = '.') then
+  begin
+    lb_num1.Text := lb_num1.Text + '8';
+  end
+  else
+  begin
+    lb_num2.Text := lb_num2.Text + '8';
+  end;
+end;
+
+procedure TForm1.btn_9Click(Sender: TObject);
+begin
+  if (lb_operador.Text = '.') then
+  begin
+    lb_num1.Text := lb_num1.Text + '9';
+  end
+  else
+  begin
+    lb_num2.Text := lb_num2.Text + '9';
+  end;
+end;
+
 procedure TForm1.btn_dividirClick(Sender: TObject);
 begin
   lb_operador.Text := '/';
@@ -59,9 +189,58 @@ end;
 
 procedure TForm1.btn_igualClick(Sender: TObject);
   var n1, n2 : double;
+  var x : Char;
 begin
-  n1 := strToFloat(txt_num1.Text);
-  n2 := strToFloat(txt_num2.Text);
+  n1 := strToFloat(lb_num1.Text);
+  n2 := strToFloat(lb_num2.Text);
+  {
+  // Efetuando a soma
+  if (lb_operador.Text = '+') then
+  begin
+    ShowMessage(FloatToStr(n1 + n2));
+  end;
+
+  // Efetuando a subtração
+  if (lb_operador.Text = '-') then
+  begin
+    ShowMessage(FloatToStr(n1 - n2));
+  end;
+
+  // Efetuando a multiplicação
+  if (lb_operador.Text = 'x') then
+  begin
+    ShowMessage(FloatToStr(n1 * n2));
+  end;
+
+  // Efetuando a divisão
+  if (lb_operador.Text = '/') then
+  begin
+    ShowMessage(FloatToStr(n1 / n2));
+  end;
+  }
+  // Utilizando o switch
+  x := lb_operador.Text[1];
+  case x of
+    '+' :
+    begin
+      ShowMessage(FloatToStr(n1 + n2));
+    end;
+
+    '-' :
+    begin
+      ShowMessage(FloatToStr(n1 - n2));
+    end;
+
+    'x' :
+    begin
+      ShowMessage(FloatToStr(n1 * n2));
+    end;
+
+    '/' :
+    begin
+      ShowMessage(FloatToStr(n1 / n2));
+    end;
+  end;
 end;
 
 procedure TForm1.btn_multClick(Sender: TObject);
